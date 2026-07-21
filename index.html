@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Workspace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <h1>MY PORTFOLIO</h1>
+    <p>welcome to Gerick's portfolio</p>
+  </header>
+
+  <div class="workspace-container">
+    
+    <div class="enclosing-box">
+      
+      <nav class="sidebar">
+        <button class="nav-btn active" data-tab="overview">Overview</button>
+        <button class="nav-btn" data-tab="about">About Me</button>
+        <button class="nav-btn" data-tab="projects">Projects</button>
+        <button class="nav-btn" data-tab="resume">Resume</button>
+        <button class="nav-btn" data-tab="contact">Contact</button>
+      </nav>
+
+      <main class="content-viewer">
+        
+        <section id="overview" class="tab-content active">
+          <h2>Overview</h2>
+          <p>Welcome to my portfolio. This just shows my knowledge in how to make a simple portfolio webpage : D</p>
+         
+        </section>
+
+        <section id="about" class="tab-content">
+          <div class="profile-header">
+            <div class="profile-avatar-wrapper">
+              <img src="imgs/pic.PNG" class="profile-avatar">
+            </div>
+            <h2>About Me</h2>
+          </div>
+
+          <p>I am Gerick Andrei M. Salalima, a first year college student at FEU Tech, currently taking Animation and Game Development <br> I am a simple person, I like cars, kpop, anime, gaming, and a little cooking on the side. <br> My favorite games are: Ghost of Tsushima, God of War, and Claire Obscure: Expedition 33.</p>
+          
+          <h3 style="margin-top: 1.5rem; color: var(--accent);">Skills</h3>
+          <ul class="skills-list">
+            <li>Drawing</li>
+          </ul>
+        </section>
+
+        <section id="projects" class="tab-content">
+          <h2>Projects</h2>
+          <p>Here are some of my personal and school projects that I have done.</p>
+
+          <div class="projects-grid">
+
+            <article class="project-card">
+              <div class="image-box project-img-box">
+                <img src="imgs/drawing.jpg" class="content-img">
+              </div>
+              <div class="project-info">
+                <h3>MitsuriKanroji</h3>
+                <p>This is a personal project I did, it's a drawing from my favorite anime Demon Slayer, and the character is Mitsuri Kanroji</p>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="image-box project-img-box">
+                <img src="imgs/keyboard.jpg" class="content-img">
+              </div>
+              <div class="project-info">
+                <h3>Royal Kludge</h3>
+                <p>While it may look like a stock keyboard, I have made that budget mechanical keyboard into a project build. I've switched out the switches, inserted some foam and modified the pcb.</p>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="image-box project-img-box">
+                <img src="imgs/entrep.jpg" class="content-img">
+              </div>
+              <div class="project-info">
+                <h3>Snack Shore</h3>
+                <p>This was a school project, in grade 12 we did an entrepreneur class in which we had to sell a product, we come up with Snack Shore a chicken sandwich type business in which netted us 30k Php in sales.</p>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <section id="resume" class="tab-content">
+          <h2>Resume & Experience</h2>
+
+          <div class="resume-details">
+            <h3>Education</h3>
+
+            <p><strong>Elementary</strong> - National Teacher's College </p>
+            <p><strong>High School</strong> - Blessed Sacrament Catholic School</p>
+            <p><strong>SHS</strong> - STEM - Nazareth School of National University 
+            <p><strong>College</strong> — BSIT AGD - FEU Tech</p>
+
+            
+            <p> no professional experience as of now. </p>
+          </div>
+        </section>
+
+        <section id="contact" class="tab-content">
+          <h2>Contact Me</h2>
+
+          <div class="contact-info-list">
+            <div class="contact-item">
+              <strong>Email:</strong>
+              <span>gamsalalima0918@gmail.com(personal), gmsalalima@fit.edu.ph(school).</span>
+            </div>
+            <div class="contact-item">
+              <strong>GitHub:</strong>
+              <span>github.com/Gerick-1017</span>
+            </div>
+            <div class="contact-item">
+              <strong>Facebook:</strong>
+              <span>facebook.com/gerick.fujiwara</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.nav-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+
+        button.classList.add('active');
+
+        const targetId = button.dataset.tab;
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
